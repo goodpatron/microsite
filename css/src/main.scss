@@ -1,0 +1,146 @@
+
+$green: #38914a;
+$yellow: #f5bc1d;
+$blue: #2e4a7d;
+
+$white: #ffffff;
+$black: #000000;
+
+@import "reset";
+@import "mixins";
+@import "grid";
+@import "fonts";
+@import "base";
+
+body {
+	background: $green;
+}
+
+.bg-green-dark {
+	background-color: darken( $green, 3% );
+	color: $white;
+}
+
+.bg-yellow {
+	background-color: $yellow;
+	color: $black;
+
+	a {
+		color: $black;
+		border-bottom: 1px dotted rgba( $black, .3 );
+
+		&:hover {
+			color: rgba( $black, .8 );
+			border-bottom: 1px dotted rgba( $black, .2 );
+		}
+	}
+}
+
+.bg-yellow-dark {
+	background-color: darken( $yellow, 3% );
+	color: $black;
+
+	a {
+		color: $black;
+		border-bottom: 1px dotted rgba( $black, .3 );
+
+		&:hover {
+			color: rgba( $black, .8 );
+			border-bottom: 1px dotted rgba( $black, .2 );
+		}
+	}
+}
+
+.bg-blue {
+	background-color: $blue;
+	color: $white;
+}
+
+.bg-blue-dark {
+	background-color: darken( $blue, 3% );
+	color: $white;
+}
+
+.separator {
+	height: 30px;
+
+	@include respond-to( 768px ) {
+		height: 50px;
+	}
+}
+
+.quiet {
+	opacity: .6;
+	font-size: .85em;
+}
+
+header {
+	padding: 40px 20px 20px;
+	text-align: center;
+
+	@include respond-to( 768px ) {
+		padding: 60px 40px 40px;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 80px 60px 60px;
+	}
+
+	h1 {
+		font-size: 4em;
+		color: $white;
+
+		@include respond-to( 1024px ) {
+			font-size: 5.5em;
+		}
+
+		span {
+			color: rgba( $white, .6 );
+		}
+	}
+}
+
+section {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 30px 40px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 40px 50px;
+	}
+
+	@include respond-to( 1440px ) {
+		padding: 50px 70px;
+	}
+
+	ul {
+		list-style-type: disc;
+		padding: 15px 0 15px 40px;
+	}
+}
+
+.container {
+	@include clearfix;
+	min-height: 100%;
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 30px 40px;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 40px 50px;
+	}
+
+	@include respond-to( 1220px ) {
+		padding: 50px 70px;
+	}
+}
+
+.wrap {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
